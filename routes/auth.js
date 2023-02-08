@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const User = require('../models/User');
 const Joi = require('@hapi/joi');
+const bcrypt = require('bcrypt');
 
 //validation with @joi register
 const schemaRegister = Joi.object({
@@ -30,6 +31,8 @@ router.post('/login', async (req, res ) =>{
 
     //validation password is correct
 
+    const passValid = await bcrypt.compare(req.body.password, userExist.password);
+    if (!passValid) return res.status(400).json({error: 'Credenciales no validas'})
 
     res.json({error: null, data: 'bienvenido'})
 
@@ -59,6 +62,9 @@ router.post('/register', async (req, res) =>{
             {error:'Email ya registrado'}
         )
     }
+// hash for the password with bcrypt
+const salt = await bcrypt.genSalt(10);
+const password = await bcrypt.hash(req.body.password, salt)
 
 // creating the new user json
     const user = new User({
