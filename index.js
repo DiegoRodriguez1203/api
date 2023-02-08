@@ -11,12 +11,15 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 app.use(bodyParser.json())
 
+/*
 // Import routes
 
 const authRoutes = require('./routes/auth.js')
 
 // Middelwares
 app.use('/api/user', authRoutes)
+*/
+
 
 /*
 app.get('/', (req, res) => {
