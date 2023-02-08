@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 
 // Import routes
 
-const authRoutes = require('./routes/auth')
+const authRoutes = require('./routes/auth.js')
 
 // Middelwares
 app.use('/api/user', authRoutes)
