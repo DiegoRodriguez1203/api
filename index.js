@@ -17,6 +17,9 @@ app.use(bodyParser.json())
 const authRoutes = require('./routes/auth.js')
 
 
+app.use( authRoutes)
+
+
 
 /*
 app.get('/', (req, res) => {
