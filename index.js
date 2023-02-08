@@ -14,11 +14,6 @@ app.use(bodyParser.json())
 
 // Import routes
 
-const authRoutes = require('./routes/auth')
-
-
-app.use( authRoutes)
-
 
 
 /*
