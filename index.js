@@ -2,7 +2,6 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config()
-import { auth } from "./routes/auth";
 
 // Create server
 const app = express();
@@ -14,7 +13,12 @@ app.use(bodyParser.json())
 
 
 // Import routes
-app.use(auth)
+
+const authRoutes = require('./routes/auth')
+
+// Middelwares
+app.use('/api/user', authRoutes)
+
 
 /*
 app.get('/', (req, res) => {
