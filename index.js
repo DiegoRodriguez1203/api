@@ -12,14 +12,14 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 
-
+/*
 app.get('/', (req, res) => {
     res.json({
         estado: true,
         mensaje: 'funciona!'
     })
 });
-
+*/
 // Port assign
 
 const PORT = process.env.PORT || 3005;
