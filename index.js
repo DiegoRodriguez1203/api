@@ -44,3 +44,4 @@ mongoose.connect(uri,
 )
 .then(() => console.log('Base de datos conectada'))
 .catch(e => console.log('error db:', e))
+
