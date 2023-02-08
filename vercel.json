@@ -3,6 +3,7 @@
     "builds": [
         {
         "src": "index.js",
+        "dest": "@now/node"
         }
     ],
     "routes": [
