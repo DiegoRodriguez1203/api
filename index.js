@@ -2,6 +2,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config()
+const ro = require('./routes/auth');
 
 // Create server
 const app = express();
